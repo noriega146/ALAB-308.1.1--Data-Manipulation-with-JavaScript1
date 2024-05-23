@@ -47,4 +47,13 @@ const dontDoThis = ((n1 + n2 + n3 + n4) == 50) &&
   //Check if all #'s divisible by 5. Cache result in variable 
   const alldivisibleby5 = n1 % 5 === 0 && n2 % 5 === 0 && n3 % 5 === 0 && n4 % 5 === 0;
   console.log('All #s are divisible by 5: ${alldivisibleby5}');
-  
+
+  //Check if first # is > than the last 
+  const firstlargerthanlast = n1>n4;
+  console.log('First # is larger than last: ${firstlargerthanlast}');
+
+  //arithmetic chain
+  const arithmeticchain = ((n2-n1)*n3)%n4;
+  console.log ('Result = ${arithmeticchain}');
+
+
