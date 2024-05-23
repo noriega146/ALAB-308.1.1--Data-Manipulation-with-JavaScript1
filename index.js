@@ -56,4 +56,84 @@ const dontDoThis = ((n1 + n2 + n3 + n4) == 50) &&
   const arithmeticchain = ((n2-n1)*n3)%n4;
   console.log ('Result = ${arithmeticchain}');
 
+  //Check if any # is over 25 with out ! OR 
+  const under25 = n1<=25 && n2<=25 && n3<=25 && n4<=25;
+  console.log ('No number is over 25: ${under25}'); 
+
+  //update isvalid to use under25
+  const isvalid = isSum50 && isTwoOdd && under25 && isUnique;
+  console.log('The 4 numbers are valid according to the provided criteria: ${isvalid}');
+
+
+  //Part2 Practical math for the road trip 
+  //varibales for the trip 
+  const distance = 1500; //miles 
+  const fuelcost = 3; // $$ per gallon 
+  const budget = 175; // dollars
+  
+  //miles per gallon at different speeds
+
+  const fueleffi55 = 30; 
+  const fueleffi60 = 28; 
+  const fueleffi75 = 23; 
+
+  //calculate fuel neeed for trip at different speeds
+
+  const gallonneededat55 = distance / fueleffi55;
+  const gallonneededat60 = distance / fueleffi60;
+  const gallonneededat75 = distance / fueleffi75;
+
+  console.log('Gallons neeed at 55 mph: ${gallonneededat55}');
+  console.log('Gallons neeed at 60 mph: ${gallonneededat60}');
+  console.log('Gallons neeed at 75 mph: ${gallonneededat75}');
+
+  //calculate total fuel cost for the trip at different speeds
+
+  const totalcostat55 = gallonneededat55 * fuelcost;
+  const totalcostat60 = gallonneededat60 * fuelcost;
+  const totalcostat75 = gallonneededat75 * fuelcost;
+
+  console.log('Total fuel cost at 55mph: $${totalcostat55}');
+  console.log('Total fuel cost at 60mph: $${totalcostat60}');
+  console.log('Total fuel cost at 75mph: $${totalcostat75}');
+
+  //Check if enough budget 
+  const enoughbudgetat55 = totalcostat55 <= budget;
+  const enoughbudgetat60 = totalcostat60 <= budget;
+  const enoughbudgetat75 = totalcostat75 <= budget;
+
+  console.log('Is budget enought at 55 mph: ${enoughbudgetat55}');
+  console.log('Is budget enought at 60 mph: ${enoughbudgetat60}');
+  console.log('Is budget enought at 75 mph: ${enoughbudgetat75}');
+
+  //Trip duration at different speeds 
+  const tripdurationat55 = distance / 55;
+  const tripdurationat60 = distance / 60;
+  const tripdurationat75 = distance / 75;
+
+  console.log('Trip duration at 55mph:${tripdurationat55}');
+  console.log('Trip duration at 60mph:${tripdurationat60}');
+  console.log('Trip duration at 75mph:${tripdurationat75}');
+
+  // best speed based on fuel efficiency and budget 
+  let bestspeed;
+  if (enoughbudgetat55){
+    bestspeed = 55;
+  } else if (enoughbudgetat60){
+    bestspeed = 60;
+  }else {
+    bestspeed = 75
+  }
+
+  console.log(' The best speed based on budget and efficiency: ${bestspeed}');
+  
+
+
+
+
+
+
+
+
+
 
